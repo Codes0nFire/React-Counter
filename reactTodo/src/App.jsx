@@ -40,6 +40,29 @@ function checkboxHandler(e,i){
 
 }
 
+
+
+//deleteboxHandler
+
+function deleteHandler(e,i){
+ 
+let copyTasks=[...task];
+
+copyTasks.splice(i,1);
+
+// console.log(copyTasks);
+
+
+settask(copyTasks);
+
+
+ 
+ 
+ 
+  
+
+}
+
 let doneTask=task.filter((t) => t.completed === true).length
 // console.log(doneTask)
 
@@ -60,7 +83,7 @@ if(task.length>0){
        </div>
         <div>
         <i className=" text-lg ri-pencil-line px-2 cursor-pointer"></i>
-        <i className= " text-lg ri-delete-bin-6-fill cursor-pointer "></i>
+        <i onClick={(e)=>deleteHandler(e,index)} className= " text-lg ri-delete-bin-6-fill cursor-pointer "></i>
         </div>
        </li>
     ) 
